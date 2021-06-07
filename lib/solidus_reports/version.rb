@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module SolidusReports
-  VERSION = '1.0.0.paragon1'
+  VERSION = '1.0.2.paragon'
 end
