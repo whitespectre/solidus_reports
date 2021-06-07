@@ -16,12 +16,14 @@ module SolidusReports
       g.test_framework :rspec
     end
 
-    config.to_prepare do
-      ::Spree::Backend::Config.menu_items << ::Spree::BackendConfiguration::MenuItem.new(
-        Configuration::REPORT_TABS,
-        'file',
-        condition: -> { can?(:admin, :reports) }
-      )
+    initializer 'solidus_reports.add_admin_section' do
+      ::Spree::Backend::Config.configure do |config|
+        config.menu_items << config.class::MenuItem.new(
+          Configuration::REPORT_TABS,
+          'file',
+          condition: -> { can?(:admin, :reports) }
+        )
+      end
     end
   end
 end
