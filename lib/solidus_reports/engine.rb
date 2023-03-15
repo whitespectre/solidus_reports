@@ -9,7 +9,7 @@ module SolidusReports
 
     isolate_namespace Spree
 
-    engine_name 'solidus_reports'
+    engine_name "solidus_reports"
 
     # use rspec for tests
     config.generators do |g|
